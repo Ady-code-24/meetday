@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 1</title>
+
+<style>
+
+/* 🌸 CHANGE YOUR FONT SIZE ANYTIME */
+:root {
+    --text-size: 26px;   /* ← change this only! */
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* UNIVERSAL RESET */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* Hide scrollbars everywhere */
+body::-webkit-scrollbar,
+.text-box::-webkit-scrollbar {
+    display:none;
+}
+body, .text-box {
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+/* PAGE BACKGROUND */
+body{
+    height:100vh;
+    width:100%;
+    background-image:url('d:\\lavender.jpg');
+    background-size:cover;
+    background-position:center;
+    font-family:'Quicksand', sans-serif;
+    text-shadow:0 0 12px rgba(0,0,0,0.9);
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+    position:relative;
+}
+
+/* TEXT BOX - scrollable */
+.text-box{
+    width:90%;
+    max-width:900px;
+    height:70vh;                 /* scrollable area height */
+    overflow-y:auto;             /* scrolling ON */
+    padding-right:20px;
+    z-index:2;
+}
+
+.text-box p{
+    font-size:var(--text-size);
+    line-height:1.5;
+    color:white;
+    white-space:pre-wrap;     /* keeps your next-line spaces */
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+}
+
+/* BUTTON */
+a{
+    padding:14px 28px;
+    background:#d7b4ff;
+    color:#4e007c;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    box-shadow:0 0 12px #caa7ff, 0 0 22px #e3c8ff;
+    transition:0.25s;
+    z-index:2;
+    margin-top:20px;
+}
+a:hover{
+    background:#e6d3ff;
+    box-shadow:0 0 18px #e9d8ff, 0 0 30px #f3e6ff;
+    transform:scale(1.05);
+}
+
+/* GLITTER */
+.glitter{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+.sparkle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    box-shadow:0 0 8px 3px rgba(255,255,255,0.7);
+    animation:fall linear infinite;
+}
+@keyframes fall {
+    0%{ transform:translateY(-10vh) scale(1); opacity:1; }
+    100%{ transform:translateY(110vh) scale(0.2); opacity:0; }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    :root { --text-size:22px; }
+}
+@media(max-width:480px){
+    :root { --text-size:20px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Glitter -->
+<div class="glitter"></div>
+
+<!-- Scrollable Text -->
+<div class="text-box">
+<p>
+Hi my love  
+It's really a special day for us baby and I want to to say a lot like really a lot, you don't realise how glad I am to have you baby and you are the best thing that happened to me and I never wanna let you go...💗
+
+And this day means a lot to me because this day we had our first interaction which we follow each other and then next day we spoke to each other...🤍
+
+I didn't know it's the most beautiful thing that would happen to me and I am so grateful for it... you don't realise how much you mean to me, how much I love you and how much I want to be with you and cherish you for my whole life...💜
+
+Never knew in my life that I will get a man who's an angel with a pure soul and a gentleman like you...🤍 
+And this day was the start of us and I could never forget this day honey....🤍
+
+I am grateful to you for making the move, approaching me, and that's the best thing that happened (sorry for bro zone 😭)  
+This day changed our lives and it's the best change ever...
+
+Thank you for coming into my life honey 💜  
+I will cherish this forever.
+</p>
+</div>
+
+<!-- Button -->
+<a href="page2.html">next page baby...💜</a>
+
+<script>
+/* Create glitter */
+const glitter = document.querySelector('.glitter');
+for(let i=0; i<60; i++){
+    let s = document.createElement('div');
+    s.classList.add('sparkle');
+    s.style.left = Math.random()*100 + "vw";
+    s.style.animationDuration = (3+Math.random()*5) + "s";
+    s.style.animationDelay = Math.random()*3 + "s";
+    glitter.appendChild(s);
+}
+</script>
+
+</body>
+</html>
